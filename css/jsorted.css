@@ -1,0 +1,4 @@
+.jsorted{position:relative;margin:0;padding:0}
+table.jsorted{border-collapse:collapse}
+.jsorted-item, tr.jsorted-item td{width:100%;margin-bottom:1px;background:#ccc;list-style-type:none}
+tr.jsorted-item td{height:25px}

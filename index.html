@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>SquidMat Online</title>
+   <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+   <script type="text/javascript" src="js/jquery-ui-1.8.21.custom.min.js"></script>
+   <script type="text/javascript" src="js/jquery.dynotable.js"></script>
+	<script type="text/javascript" src="js/stupidtable.js"></script>
+	<script type="text/javascript" src="js/smo.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.8.21.custom.css" />
+
+<style>
+	body {
+	font-family: arial;
+	}
+	select {
+	height: 27px;
+	width: 200px;	
+	}
+	#buttonLegend {
+	font-size: 10pt
+	}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: LightYellow;
+  color: black;
+  border: 2px solid black;
+}
+
+.button1:hover {
+  background-color: DodgerBlue;
+  color: white;
+  border: 2px solid black;
+}
+
+.button2 {
+  background-color: LightYellow;
+  color: black;
+  border: 2px solid black;
+}
+
+.button2:hover {
+  background-color: DodgerBlue;
+  color: white;
+  border: 2px solid black;
+}
+
+.button3 {
+  background-color: LightYellow;
+  color: black;
+  border: 2px solid black;
+}
+
+.button3:hover {
+  background-color: DodgerBlue;
+  color: white;
+  border: 2px solid black;
+}
+
+.button4 {
+  background-color: LightYellow;
+  color: black;
+  border: 2px solid black;
+}
+
+.button4:hover {
+  background-color: DodgerBlue;
+  color: white;
+  border: 2px solid black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<hr />
+
+<div><big><b>SquidMat Online</b> - </big>Basic Decision Matrix Tool</div>
+
+<hr />
+
+<button class="button button1" onclick="window.open('https://vimeo.com/943343722?share=copy');">View a Video Demonstration</button>
+
+<button class="button button2" onclick="window.open('https://www.gojo.link/squidmat');">Learn more about SquidMat</button>
+
+<button class="button button3" onclick="window.open('SquidMat.zip');">Download SquidMat for Windows</button>
+
+<button class="button button4" onclick="window.open('SMO.zip');">Download SquidMat Online (to run on your computer)</button>
+
+<hr />
+
+<div id="tabs">
+	<ul>
+		<li><a href="#ecTab">Evaluation Criteria</a></li>
+		<li><a href="#dmTab">Decision Matrix</a></li>
+		<li><a href="#saTab">Sensitivity Analysis</a></li>
+	</ul>
+
+	<div id="ecTab">
+	
+	<p>Enter a title for this project: <input id="enterProjTitle" style="width:400px" /></p>
+	
+	<table id="ecTable" style="border: 2px solid black; background: LightYellow url(css/ui-lightness/images/ui-bg_gloss-wave_LightYellow_500x100.png) 50% 50% repeat-x; color: black; font-weight: narrow">
+	<thead id="header" style="text-align:left">
+		<tr>
+			<th>
+			</th>
+			<th id="check">Short Title</th>
+			<th>Importance</th>
+			<th>Unit of Measure</th>
+			<th>MIB/LIB</th>
+		</tr>
+	</thead>	
+	<tbody>	
+	<tr>
+        <td>
+            <div class="drag-handle"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span></div>
+        </td>
+        <td>
+            <input class="ecShortTitle" name="ecShortTitle" type="text"/> 
+        </td>
+        <td> 
+            <select class="importance">
+                <option value="1.00">Equal to (1.00)</option>
+                <option value="1.25">Slightly more (1.25)</option>
+                <option value="1.50">Somewhat more (1.50)</option>
+                <option value="1.75">Much more (1.75)</option>
+                <option value="2.00">Considerably more (2.00)</option>
+            </select>
+        </td>
+        <td>
+            <input class="unitOfMeasure" type="text"/> 
+        </td>
+        <td>
+            <select class="MIBLIB" name="MIBLIB">
+                <option value="(MIB)">More is better (MIB)</option>
+                <option value="(LIB)">Less is better (LIB)</option>
+            </select>
+        </td>
+        <td>
+            <div class="row-remover"><span class="ui-icon ui-icon-closethick"></span></div>
+        </td>
+   </tr>   
+  	<tr>
+        <td>
+            <div class="drag-handle"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span></div>
+        </td>
+        <td>
+            <input class="ecShortTitle" name="ecShortTitle" type="text"/> 
+        </td>
+        <td>
+        		1.00
+        </td>
+        <td>
+            <input class="unitOfMeasure" type="text"/> 
+        </td>
+        <td>
+            <select class="MIBLIB" name="MIBLIB">
+                <option value="(MIB)">More is better (MIB)</option>
+                <option value="(LIB)">Less is better (LIB)</option>
+            </select>
+        </td>
+        <td>
+            <div class="row-remover"><span class="ui-icon ui-icon-closethick"></span></div>
+        </td>
+	</tr>
+   <tr id="add-template">
+        <td>
+            <div class="drag-handle"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span></div>
+        </td>
+        <td>
+            <input class="ecShortTitle" name="ecShortTitle" type="text"/> 
+        </td>
+        <td> 
+            <select class="importance">
+                <option value="1.00">Equal to (1.00)</option>
+                <option value="1.25">Slightly more (1.25)</option>
+                <option value="1.50">Somewhat more (1.50)</option>
+                <option value="1.75">Much more (1.75)</option>
+                <option value="2.00">Considerably more (2.00)</option>
+            </select>
+        </td>
+        <td>
+            <input class="unitOfMeasure" type="text"/> 
+        </td>
+        <td>
+            <select class="MIBLIB" name="MIBLIB">
+                <option value="(MIB)">More is better (MIB)</option>
+                <option value="(LIB)">Less is better (LIB)</option>
+            </select>
+        </td>
+        <td>
+            <div class="row-remover"><span class="ui-icon ui-icon-closethick"></span></div>
+        </td>
+   </tr>
+	</tbody>
+	</table>
+
+  	<div>
+  	<p>
+  		<button id="add-row">Add an EC</button>
+  		<button id="sendECs_btn">Send ECs to the Decision Matrix</button>
+		<button onclick="window.print()">Print This Page</button>
+  		<button class="startOver_btn">Start Over</button>
+		<div id="startOverDialog" title="Are you sure?" style="display:none;">
+      	This will wipe out everything. Do you want to continue?
+   	</div>
+  	</p>
+	</div>  	
+	<hr />  	
+
+  	<div >
+  	<b>Button Legend:</b>
+	<table id="buttonLegend">
+		<tr>
+			<td><span class="ui-icon ui-icon-arrowthick-2-n-s"></span></td>
+			<td>Drag handle. Drag and drop rows to change their order.</td>
+		</tr>		
+		<tr>
+			<td><span class="ui-icon ui-icon-closethick"></span></td>
+			<td>Delete a row. (Add a row using the "Add an EC" button.)</td>
+		</tr>
+	</table>
+	<hr />
+	</div>
+
+	<div id="tooFewECsDialog" title="Not enough ECs" style="display:none;">
+	   ERROR: Too few evaluation criteria (ECs). There must be at least two ECs. Add more and try again.
+   </div>
+
+
+  	</div><!--End of ecTab-->
+  	
+  	<div id="dmTab">
+		<h3 class="projTitle"></h3>
+		<table id="dmTable" style="border: 2px solid black; background: LightYellow url(css/ui-lightness/images/ui-bg_gloss-wave_LightYellow_500x100.png) 50% 50% repeat-x; color: black; font-weight: bold">
+			<thead id="dmTHead">
+				<tr>
+					<th nowrap="nowrap">Evaluation Criteria &rarr; </th>
+					<th></th>
+					<th class="ecColumn"></th>
+					<th class="ecColumn"></th>
+					<th></th>
+				</tr>
+				<tr>
+					<th></th>
+					<th></th>
+					<th class="ecColumn"></th>
+					<th class="ecColumn"></th>
+					<th></th>
+				</tr>
+				<tr>
+					<th>Courses of Action</th>
+					<th id="sortCell" class="type-float">Sum</th>
+					<th class="ecColumn"></th>
+					<th class="ecColumn"></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody id="dmTBody">
+			</tbody>			
+		</table>
+		<p>
+			<button id="addCOA_btn">Add a COA</button>
+			<button id="runAnalysis_btn">Run the Analysis</button>
+			<button onclick="window.print()">Print This Page</button>
+			<button class="startOver_btn">Start Over</button>			
+		</p>
+		<div id="dmNotReadyDialog" title="Decision Matrix not ready" style="display:none;">
+       You need to enter your evaluation criteria first. Go back to the "Evaluation Criteria" tab and enter them.
+   	</div>
+		<div id="badNumberDialog" title="Check your numbers" style="display:none;">
+       ERROR: Check your numbers. At least one of them is not a proper number. Make sure there are no commas, no dollar signs ($), no empty cells, etc. Decimals are OK.
+   	</div>
+		<div id="divByZeroDialog" title="Values in a column all equal" style="display:none;">
+       ERROR: Division by 0. One of your evaluation criteria (ECs) has the same value for all courses of action. They cannot all be equal. If there are no differences in the values for an EC, there is no point in using it.
+   	</div>
+		<div id="tooFewCOAsDialog" title="Not enough COAs" style="display:none;">
+       ERROR: Too few courses of action (COAs). There must be at least two COAs. Add more and try again.
+   	</div>
+  	</div><!--End of dmTab-->
+
+  	<div id="saTab">
+		<h3 class="projTitle"></h3>
+	  	<textarea id="report" rows="15" cols="80" ></textarea>
+		<p>
+			<button onclick="window.print()">Print This Page</button>
+			<button class="startOver_btn">Start Over</button>
+		</p>
+  	</div><!--End of saTab-->
+
+</div><!--End of tabs-->
+
+</body>
+<footer style="text-align:right">
+	<p>c 2012 <a href="http://www.gojo.link/squidmat" target="_blank">Smilin' Joe</a></p>
+</footer>
+</html>
